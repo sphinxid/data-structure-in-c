@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Linkedlist Seed Data: 99, 13, 43, 72, 68, 33, 92, 9, 30, 51, 2, 37, 82, 40, 17, 12, 47
+// Linkedlist Seed Data: 90, 12, 37, 81, 20, 45, 71, 3, 66, 103, 29, 47, 8, 10, 92, 41
 
 /*
  *
@@ -62,7 +62,7 @@ int deleteNodeFirst() {
 
 
 int main(void) {
-    int seedData[] = {99, 13, 43, 72, 68, 33, 92, 9, 30, 51, 2, 37, 82, 40, 17, 12, 47};
+    int seedData[] = {90, 12, 37, 81, 20, 45, 71, 3, 66, 103, 29, 47, 8, 10, 92, 41};
     int i = 0;
 
     for(i=0;i<(sizeof(seedData)/sizeof(int));i++) {
