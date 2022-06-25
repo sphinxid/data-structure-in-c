@@ -30,7 +30,7 @@ void append(int n) {
 }
 
 void deleteTail() {
-    if (head != NULL) {
+    if (tail != NULL) {
         curr = tail;
         
         tail = curr->prev;
