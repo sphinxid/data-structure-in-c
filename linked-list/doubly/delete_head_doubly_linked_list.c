@@ -65,4 +65,5 @@ int main(void) {
     deleteHead();
     printLL();
 
+    return 0;
 }
