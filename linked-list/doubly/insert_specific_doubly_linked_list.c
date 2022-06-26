@@ -42,12 +42,12 @@ void printLL(){
     return;
 }
 
-struct barang *findNode(int number) {
+struct barang *findNode(int number1, int number2) {
 
     curr = head;
 
-    while(curr) {
-        if(curr->number == number) {
+    while(curr && curr->next) {
+        if(curr->number == number1 && curr->next->number == number2) {
             return curr;
         }
         curr = curr->next;
@@ -56,11 +56,11 @@ struct barang *findNode(int number) {
     return NULL;
 }
 
-void insertAfter(int number, int newNumber) {
+void insertAfterAndBefore(int number1, int number2, int newNumber) {
     struct data *newNode = (struct data*) malloc(sizeof(struct data));
     struct data *temp1, *temp2;
 
-    curr = findNode(number);
+    curr = findNode(number1, number2);
 
     if (curr) {
         newNode->number = newNumber;
@@ -88,7 +88,7 @@ int main(void) {
     }
 
     printLL();
-    insertAfter(3, newNumber);
+    insertAfterAndBefore(3, 47, newNumber);
     printLL();
 
     return 0;
