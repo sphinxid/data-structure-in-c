@@ -58,7 +58,7 @@ struct barang *findNode(int number1, int number2) {
 
 void insertAfterAndBefore(int number1, int number2, int newNumber) {
     struct data *newNode = (struct data*) malloc(sizeof(struct data));
-    struct data *temp1, *temp2;
+    struct data *temp1;
 
     curr = findNode(number1, number2);
 
@@ -66,9 +66,8 @@ void insertAfterAndBefore(int number1, int number2, int newNumber) {
         newNode->number = newNumber;
 
         temp1 = curr;
-        temp2 = curr->next;
 
-        newNode->next = temp2;
+        newNode->next = temp1->next;
         newNode->prev = curr;
 
         curr->next = newNode;
