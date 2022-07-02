@@ -54,7 +54,7 @@ int getQueue(struct queue *q) {
 void printQueue(struct queue *q) {
     int i;
 
-    if (q->maxSize > 0) {
+    if (q->currentSize > 0) {
         for(i=0;i<q->currentSize;i++) {
             printf("%d ", q->data[(q->head)+i]);
         }
@@ -69,7 +69,7 @@ void printQueue(struct queue *q) {
 
 int main(void) {
     int arrayData[] = {7,19,72,44,62,10,9,34,50,27,83,4};
-    int arrayLen, i;
+    int arrayLen, i, x;
     struct queue *q;
 
     // initilize new circular queue
@@ -82,14 +82,23 @@ int main(void) {
     }
 
     // print the current queue
-    printf("Current Queue: \n");
+    printf("Current Queue (%d): \n", q->currentSize);
     printQueue(q);
 
     // add '3' to the current queue
     addToQeue(q, 3);
 
     // print the current queue
-    printf("Current Queue: \n");
+    printf("Current Queue (%d): \n", q->currentSize);
+    printQueue(q);
+
+    x = q->currentSize;
+    for(i=0;i<x;i++) {
+        getQueue(q);
+    }    
+
+    // print the current queue
+    printf("Current Queue (%d): \n", q->currentSize);
     printQueue(q);
 
     return 0;
